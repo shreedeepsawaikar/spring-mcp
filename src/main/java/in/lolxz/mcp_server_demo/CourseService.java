@@ -16,12 +16,12 @@ public class CourseService {
     private static final Logger log = LoggerFactory.getLogger(CourseService.class);
     List<Course> courses = new ArrayList<>();
 
-    @Tool(name = "dv_get_courses", description = "Get a list of courses from Dan Vega")
+    @Tool(name = "get_courses", description = "Get a list of courses from Dan Vega")
     public List<Course> getCourses() {
         return courses;
     }
 
-    @Tool(name = "dv_get_course", description = "Get a single courses from Dan Vega by title")
+    @Tool(name = "get_course", description = "Get a single courses from Dan Vega by title")
     public Course getCourse(String title) {
         return courses.stream().filter(course -> course.title().equals(title)).findFirst().orElse(null);
     }

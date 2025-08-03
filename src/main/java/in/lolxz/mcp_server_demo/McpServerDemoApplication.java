@@ -20,15 +20,12 @@ public class McpServerDemoApplication {
 	}
 
 	@Bean
-	public List<ToolCallback> danTools(CourseService courseService,
+	public List<ToolCallback> getTools(CourseService courseService,
 									   DirectoryService directoryService,
 									   UserService userService) {
-		List<ToolCallback> tools = new ArrayList<>();
-		tools.addAll(Arrays.asList(ToolCallbacks.from(courseService)));
-		tools.addAll(Arrays.asList(ToolCallbacks.from(directoryService)));
-		tools.addAll(Arrays.asList(ToolCallbacks.from(userService)));
-		return tools;
+		return List.of(ToolCallbacks.from(courseService, directoryService, userService));
 	}
+
 
 	@Bean
 	public RestClient restClient() {

@@ -23,14 +23,14 @@ public class UserService {
                 }).getBody();
     }
 
-    @Tool(name = "get_user", description = "Get users all from api")
-    public User getUser(int id) {
-        return restClient.get()
-                .uri("/users/" + id)
-                .retrieve()
-                .toEntity(new ParameterizedTypeReference<User>() {})
-                .getBody();
-    }
+//    @Tool(name = "get_user", description = "Get users all from api")
+//    public User getUser(int id) {
+//        return restClient.get()
+//                .uri("/users/" + id)
+//                .retrieve()
+//                .toEntity(new ParameterizedTypeReference<User>() {})
+//                .getBody();
+//    }
 
 
 }
